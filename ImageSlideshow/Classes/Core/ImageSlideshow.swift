@@ -529,7 +529,9 @@ open class ImageSlideshow: UIView {
 
     /**
      Open full screen slideshow
-     - parameter controller: Controller to present the full screen controller from
+     - parameter controller: Controller to 
+    
+    the full screen controller from
      - returns: FullScreenSlideshowViewController instance
      */
     @discardableResult
@@ -543,6 +545,7 @@ open class ImageSlideshow: UIView {
         fullscreen.inputs = images
         slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: self, slideshowController: fullscreen)
         fullscreen.transitioningDelegate = slideshowTransitioningDelegate
+        fullscreen.modalPresentationStyle = .fullScreen
         controller.present(fullscreen, animated: true, completion: nil)
 
         return fullscreen
